@@ -1,0 +1,139 @@
+/* Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 🌌 THEME (Purple Glass UI) */
+:root {
+  --bg: #0a0a12;
+  --bg2: rgba(20, 20, 35, 0.7);
+  --bg3: rgba(40, 40, 70, 0.6);
+
+  --border: rgba(255, 255, 255, 0.08);
+
+  --accent: #a855f7;
+  --accent2: #6366f1;
+  --accent-glow: rgba(168, 85, 247, 0.25);
+
+  --success: #34d399;
+  --warning: #fbbf24;
+  --danger: #fb7185;
+
+  --text: #f5f5ff;
+  --text2: #b4b8d3;
+  --text3: #6b6f8a;
+
+  --radius: 14px;
+  --shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
+}
+
+html {
+  font-size: 16px;
+}
+
+/* 🌌 Background */
+body {
+  font-family: 'Sora', sans-serif;
+  background: radial-gradient(circle at 20% 20%, #1a1a40, #05050a 70%);
+  color: var(--text);
+  min-height: 100vh;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 🔘 Buttons */
+button {
+  font-family: 'Sora', sans-serif;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: white;
+  padding: 10px 14px;
+  transition: all 0.25s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--accent-glow);
+}
+
+/* 🧾 Inputs */
+input, select, textarea {
+  font-family: 'Sora', sans-serif;
+  outline: none;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+/* 🔗 Links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 🌫 Glass Effect (use className="glass") */
+.glass {
+  background: var(--bg2);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+}
+
+/* 📜 Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg2);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+
+/* 🎬 Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-16px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.fade-in {
+  animation: fadeIn 0.35s ease both;
+}
+
+.slide-in {
+  animation: slideIn 0.3s ease both;
+}
+
+/* 🧰 Utility */
+.mono {
+  font-family: 'DM Mono', monospace;
+}
+
+/* ✨ Smooth UI transitions */
+* {
+  transition: background 0.25s ease, color 0.25s ease, border 0.25s ease;
+}
